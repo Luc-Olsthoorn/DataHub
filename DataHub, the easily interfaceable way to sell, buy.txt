@@ -1,0 +1,14 @@
+DataHub, the easily interfaceable way to sell, buy and get data.
+	Buy
+		Search for certain data
+		Interface with multiple API's
+		free data as well
+			Display the prices of different queries
+	Sell
+		Upload CSV,
+		Access certain things based on certain cost
+Databases
+	Users
+	Data
+	Queries and prices 
+root@localhost: 4c=ETSn5ggo4

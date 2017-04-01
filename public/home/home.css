@@ -1,0 +1,9 @@
+#mainContainer{
+ 	height:90%;
+}
+body{
+	background-image: url('../img/cover.jpg') !important;
+    background-size: cover !important;
+    width:100%;
+    height:100%;
+}

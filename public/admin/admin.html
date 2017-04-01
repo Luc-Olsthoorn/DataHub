@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="../support/global.css">
+		<!--JS -->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	</head>
+	<body>
+		<div id="menu"></div>
+		<div id="errorMsg" ></div>
+		<div class="ui container ">
+			<div class="ui grid center aligned">
+				<div class="twelve wide column center aligned">
+					<h1> Admin Page </h1>
+					<div class="ui divider "></div>
+					<div class="ui input fluid">
+			  			<input id="sqlInput" type="text" placeholder="Query me">
+			  			<button class="ui button"  id ="sqlInputBtn">Query!</button>
+					</div>
+					
+				</div>
+			</div>
+			<div class="ui divider "></div>
+			<div id="queryTable" ></div>
+		</div>
+	</body>
+	<!-- MORE SCRIPTS -->
+	<script src="../support/global.js"></script>
+	<script src="../admin/admin.js"></script>
+</html>
