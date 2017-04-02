@@ -36,6 +36,25 @@ app.get('/sell', function(req, res){
 app.get('/buy', function(req, res){
   		res.sendFile(path.join(__dirname, 'public/buy/buy.html'));
 	});
+app.post('/getListings', function(req, res){
+	var insertQuery = "SELECT * FROM Data;";
+	connection.query(insertQuery, function (error, results, fields) {
+		  if (error) throw error;
+		  res.send(JSON.stringify(results));
+		});
+});
+app.post('/getPrices', function(req, res){
+	var obj = {};
+	//console.log(req);
+	obj = req.body;
+	console.log(obj);
+	var insertQuery = "SELECT * FROM " + obj[0] + ";";
+	console.log(insertQuery);
+	connection.query(insertQuery, function (error, results, fields) {
+		  if (error) throw error;
+		  res.send(results);
+		});
+});
 app.post('/query', function(req, res){
 
 	connection.query(req.body, function (error, results, fields) {
@@ -156,13 +175,18 @@ app.post('/uploadPrice', function(req, res){
 	var obj = {};
 	obj = req.body;
 	
-	var insertQuery = "RENAME TABLE temp TO " + obj[0] + ";";
+	var insertQuery = "RENAME TABLE temp TO " + obj[0][0] + ";";
 	console.log(insertQuery);
 	connection.query(insertQuery, function (error, results, fields) {
 			if (error) throw error;
 			console.log("renamed!");
 		});
-	insertQuery = 'CREATE TABLE ' + obj[0]+"Price" + "("; 
+	insertQuery ="INSERT INTO Data (name,description) VALUES('"+obj[0][0]+"','"+obj[0][1]+"')";
+	connection.query(insertQuery, function (error, results, fields) {
+			if (error) throw error;
+			console.log("INSERTED INTO DATA");
+		});
+	insertQuery = 'CREATE TABLE ' + obj[0][0]+"Price" + "("; 
 	for(var i=0; i < obj.length; i++){
 		insertQuery += obj[i][0] + " " + "VARCHAR(255)";
 		if(i<obj.length-1)
@@ -176,7 +200,7 @@ app.post('/uploadPrice', function(req, res){
 		if (error) throw error;
 		console.log("created Price test");
 		
-		insertQuery = 'INSERT INTO ' + obj[0]+"Price" + "(";
+		insertQuery = 'INSERT INTO ' + obj[0][0]+"Price" + "(";
 		for(var i=0; i < obj.length; i++){
 			insertQuery += obj[i][0] + " ";
 			if(i<obj.length-1)
