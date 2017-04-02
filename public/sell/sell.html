@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="../support/global.css">
+		<link rel="stylesheet" type="text/css" href="../sell/sell.css">
+		<!--JS -->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+		<script src="https://tyleryasaka.github.io/semantic-ui-range/range.js"></script>
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	</head>
+	<body>
+		<div id="menu"></div>
+		<div id="errorMsg" ></div>
+		<div class="ui container ">
+			<div class="ui grid center aligned" >
+				<div class="twelve wide column center aligned">
+					<h1> Sell your Data </h1>
+					<div class="ui divider "></div>
+					<div id="upload">
+					<button class="btn btn-lg upload-btn" type="button">Upload File</button>
+					<input style="display:none;" id="upload-input" type="file" name="uploads[]" multiple="multiple">
+			  		<button class="ui button"  id ="submitTable">Sell this!</button>
+			  	</div>
+				</div>
+			</div>
+			<div class="ui divider "></div>
+			<div id="profit" ></div>
+		</div>
+	</body>
+	<!-- MORE SCRIPTS -->
+	<script src="../support/global.js"></script>
+	<script src="../sell/sell.js"></script>
+</html>
+
+
